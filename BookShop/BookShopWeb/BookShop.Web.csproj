@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BookShop.Infrastructure\BookShop.Infrastructure.csproj" />
+    <ProjectReference Include="..\BookShop.Integration\BookShop.Integration.csproj" />
+    <ProjectReference Include="..\BookShop\BookShop.Core.csproj" />
+  </ItemGroup>
+
+</Project>

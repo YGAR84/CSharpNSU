@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using BookShop;
+using BookShop.Core;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace BookShopTest
+namespace BookShop.Test
 {
 	[TestFixture]
 	public class BookTest
@@ -12,7 +12,7 @@ namespace BookShopTest
 		[Test]
 		public void BookCtorTest()
 		{
-			IReadOnlyList<Genre> genres1 = new List<Genre> { new Genre("fantasy") };
+			List<Genre> genres1 = new List<Genre> { new Genre("fantasy") };
 			BookInfo bookInfo1 = new BookInfo("Harry Potter and the Chamber of Secrets", "J.K.Rowling", genres1);
 			decimal cost = 500.1m;
 			DateTime arriveDate = DateTime.Today.Date; 

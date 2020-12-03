@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace BookShop.Discounts
+namespace BookShop.Core.Discounts
 {
 	public class BookDiscount : Discount
 	{
-		public BookInfo BookInfo { get; }
+		public int BookInfoId { get; set; }
+		public BookInfo BookInfo { get; set; }
 
 		public BookDiscount(DateTime expireDate, int discountPercentage, BookInfo bookInfo) : base(expireDate,
 			discountPercentage)

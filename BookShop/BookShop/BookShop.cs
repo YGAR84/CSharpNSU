@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using BookShop.Discounts;
-using Microsoft.VisualBasic.CompilerServices;
+using BookShop.Core.Discounts;
 
-namespace BookShop
+namespace BookShop.Core
 {
 	public class BookShop
 	{

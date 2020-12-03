@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using BookShop;
+using BookShop.Core;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace BookShopTest
+namespace BookShop.Test
 {
 	[TestFixture]
 	public class BookInfoTest
@@ -11,7 +11,7 @@ namespace BookShopTest
 		[Test]
 		public void BookInfoCtorTest()
 		{
-			IReadOnlyList<Genre> genres1 = new List<Genre> { new Genre("fantasy") };
+			List<Genre> genres1 = new List<Genre> { new Genre("fantasy") };
 			var title = "Harry Potter and the Chamber of Secrets";
 			var author = "J.K.Rowling";
 			BookInfo bookInfo1 = new BookInfo(title, author, genres1);

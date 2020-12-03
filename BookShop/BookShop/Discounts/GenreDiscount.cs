@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Linq;
 
-namespace BookShop.Discounts
+namespace BookShop.Core.Discounts
 {
 	public class GenreDiscount : Discount
 	{
-		private Genre Genre { get; }
-
+		public int GenreId { get; set; }
+		public Genre Genre { get; }
 		public GenreDiscount(DateTime expireDate, int discountPercentage, Genre genre) : base(expireDate, discountPercentage)
 		{
 			Genre = genre;

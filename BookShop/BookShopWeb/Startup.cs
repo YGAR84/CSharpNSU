@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
-using BookShop;
+﻿using System.Net.Http;
+using BookShop.Core;
+using BookShop.Infrastructure.EntityFramework;
 using BookShop.Integration.ExternalServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Hosting;
 
-namespace BookShopWeb
+namespace BookShop.Web
 {
 	public class Startup
 	{
@@ -28,14 +22,18 @@ namespace BookShopWeb
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+			services.AddControllers();
 			services.AddSingleton<HttpClient>();
 			services.AddScoped<IBookServiceProxy, ServiceProxy>();
+
+			services.AddSingleton(isp => new BookShopContextDbContextFactory(Configuration.GetConnectionString("DefaultConnection")));
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
+			app.UseRouting();
+			app.UseEndpoints(endpoints => endpoints.MapControllers());
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
@@ -46,7 +44,7 @@ namespace BookShopWeb
 			}
 
 			app.UseHttpsRedirection();
-			app.UseMvc();
+			
 		}
 	}
 }

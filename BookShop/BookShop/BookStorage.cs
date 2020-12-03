@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace BookShop
+namespace BookShop.Core
 {
 	public class BookStorage
 	{

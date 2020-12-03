@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using BookShop.Core.Discounts;
 
-namespace BookShop
+namespace BookShop.Core
 {
 	public class Genre : IEquatable<Genre>
 	{
-		public string Name { get; }
+		public int Id { get; set; }
+		public string Name { get; set; }
+		public List<BookInfo> BookInfos { get; set; }
+		public List<GenreDiscount> GenreDiscounts { get; set; }
 
 		public Genre(string name)
 		{

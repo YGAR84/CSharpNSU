@@ -1,8 +1,8 @@
-﻿using BookShop;
+﻿using BookShop.Core;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace BookShopTest
+namespace BookShop.Test
 {
 	[TestFixture]
 	public class GenreTest

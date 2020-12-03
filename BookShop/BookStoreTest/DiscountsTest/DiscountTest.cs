@@ -1,10 +1,10 @@
 ﻿using System;
-using BookShop;
-using BookShop.Discounts;
+using BookShop.Core;
+using BookShop.Core.Discounts;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace BookShopTest.DiscountsTest
+namespace BookShop.Test.DiscountsTest
 {
 	public class DiscountTest
 	{

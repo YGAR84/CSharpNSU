@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace BookShop.Discounts
+namespace BookShop.Core.Discounts
 {
 	public class DefectDiscount : Discount
 	{
 		public Guid BookGuid { get; }
+
+		public Book Book { get; set; }
 
 		public DefectDiscount(DateTime expireDate, int discountPercentage, Guid bookGuid) : base(expireDate, discountPercentage)
 		{

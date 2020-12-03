@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using BookShop;
-using BookShop.Discounts;
+using BookShop.Core;
+using BookShop.Core.Discounts;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace BookShopTest.DiscountsTest
+namespace BookShop.Test.DiscountsTest
 {
 	public class GenreDiscountTest
 	{
 		[Test]
 		public void GenreDiscountCtorTest()
 		{
-			IReadOnlyList<Genre> genres1 = new List<Genre> { new Genre("fantasy") };
+			List<Genre> genres1 = new List<Genre> { new Genre("fantasy") };
 			BookInfo bookInfo1 = new BookInfo("Harry Potter and the Chamber of Secrets", "J.K.Rowling", genres1);
 			decimal cost = 500.1m;
 			DateTime arriveDate = DateTime.Today.Date;
@@ -27,13 +27,13 @@ namespace BookShopTest.DiscountsTest
 		[Test]
 		public void BookDiscountApplyDiscountTest()
 		{
-			IReadOnlyList<Genre> genres1 = new List<Genre> { new Genre("fantasy") };
+			List<Genre> genres1 = new List<Genre> { new Genre("fantasy") };
 			BookInfo bookInfo1 = new BookInfo("Harry Potter and the Chamber of Secrets", "J.K.Rowling", genres1);
 			decimal cost = 500.11m;
 
 			Book book1 = new Book(bookInfo1, cost, DateTime.Today.Date);
 
-			IReadOnlyList<Genre> genres2 = new List<Genre> { new Genre("other") };
+			List<Genre> genres2 = new List<Genre> { new Genre("other") };
 			BookInfo bookInfo2 = new BookInfo("One Flew Over the Cuckoo's Nest", " Ken Kesey", genres2);
 			Book book2 = new Book(bookInfo2, 600m, DateTime.Today.AddDays(-110));
 

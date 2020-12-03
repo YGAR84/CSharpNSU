@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using BookShop.Core.Discounts;
 
-namespace BookShop
+namespace BookShop.Core
 {
 	public class BookInfo
 	{
-		public string Title { get; }
-		public string Author { get; }
-		public IReadOnlyList<Genre> Genres { get; }
+		public int Id { get; set; }
+		public string Title { get; set; }
+		public string Author { get; set; }
+		public List<Genre> Genres { get; set; }
 
-		public BookInfo(string title, string author, IReadOnlyList<Genre> genres)
+		public List<Book> Books { get; set; }
+
+		public List<BookDiscount> BookDiscounts { get; set; }
+
+		public BookInfo(string title, string author, List<Genre> genres)
 		{
 			Title = title;
 			Author = author;

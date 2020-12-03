@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookShop.Discounts
+namespace BookShop.Core.Discounts
 {
 	public abstract class Discount
 	{
-		public DateTime ExpireDate { get; }
-		public decimal DiscountPercentage { get; }
+		public int Id { get; set; }
+		public DateTime ExpireDate { get; set; }
+		public decimal DiscountPercentage { get; set; }
 
 		protected Discount(DateTime expireDate, int discountPercentage)
 		{
