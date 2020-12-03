@@ -12,6 +12,9 @@ namespace BookShop.Integration.ExternalServices
 		private readonly HttpClient _httpClient;
 		private readonly string _endpoint = "https://getbooksrestapi.azurewebsites.net/api/books/";
 
+		#warning почему такое название класса? почему если он используется только здесь, есть неиспользуемые поля?
+		public string Endpoint => _endpoint;
+
 		private class StupidBook
 		{
 			public int Id { get; set; }
