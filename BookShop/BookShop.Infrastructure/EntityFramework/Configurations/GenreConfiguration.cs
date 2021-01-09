@@ -15,8 +15,17 @@ namespace BookShop.Infrastructure.EntityFramework.Configurations
 			builder.HasKey(x => x.Id);
 			builder.Property(x => x.Id).ValueGeneratedOnAdd();
 
-			builder.Property(x => x.Name).HasMaxLength(100);
+			builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
 
+			builder.HasIndex(g => g.Name).IsUnique();
+
+			builder.HasMany(x => x.GenreDiscounts)
+				.WithOne(x => x.Genre)
+				.HasForeignKey(x => x.GenreId)
+				.OnDelete(DeleteBehavior.NoAction);
+
+			builder.HasMany(x => x.BookInfos)
+				.WithMany(x => x.Genres);
 
 		}
 	}

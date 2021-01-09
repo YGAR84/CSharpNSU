@@ -8,8 +8,10 @@ namespace BookShop.Core
 	{
 		public int Id { get; set; }
 		public string Name { get; set; }
-		public List<BookInfo> BookInfos { get; set; }
-		public List<GenreDiscount> GenreDiscounts { get; set; }
+		public virtual List<BookInfo> BookInfos { get; set; }
+		public virtual List<GenreDiscount> GenreDiscounts { get; set; }
+
+		public Genre() {}
 
 		public Genre(string name)
 		{

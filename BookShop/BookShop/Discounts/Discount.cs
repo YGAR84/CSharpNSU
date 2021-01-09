@@ -10,6 +10,10 @@ namespace BookShop.Core.Discounts
 		public DateTime ExpireDate { get; set; }
 		public decimal DiscountPercentage { get; set; }
 
+		protected Discount()
+		{
+		}
+
 		protected Discount(DateTime expireDate, int discountPercentage)
 		{
 			ExpireDate = expireDate;

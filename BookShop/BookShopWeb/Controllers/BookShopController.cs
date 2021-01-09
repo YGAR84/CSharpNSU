@@ -1,44 +1,54 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using BookShop.Core;
-using BookShop.Infrastructure.EntityFramework;
+﻿using System.Threading.Tasks;
+using BookShop.Logic;
+using BookShop.Logic.Requests.BookShopRequest;
+using BookShop.Logic.Responses.BookShopResponses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookShop.Web.Controllers
 {
-	[Route("api/[controller]")]
+	[Route("api/bookShop")]
 	[ApiController]
 	public class BookShopController : ControllerBase
 	{
-		private readonly IBookServiceProxy _bookShopServiceProxy;
+		private readonly BookShopService _bookShopService;
 
-		private readonly BookShopContextDbContextFactory _dbContextFactory;
-		public BookShopController(IBookServiceProxy serviceProxy, BookShopContextDbContextFactory dbContextFactory)
+		public BookShopController(BookShopService bookShopService)
 		{
-			_bookShopServiceProxy = serviceProxy;
-			_dbContextFactory = dbContextFactory;
-		}
-
-		[HttpGet("/a")]
-		public string Get()
-		{
-			return "sdaad";
+			_bookShopService = bookShopService;
 		}
 
 		[HttpGet]
-		[Route("{count}")]
-		public async Task<List<Book>> Get(int count)
+		public async Task<GetBookShopResponse> GetBookShopState()
 		{
-			return await _bookShopServiceProxy.GetBooks(count);
+			return await _bookShopService.GetBookShopResponse();
 		}
 
-		[HttpGet]
-		[Route("/books")]
-		public async Task<List<Book>> GetBooks()
+		[HttpPost]
+		[Route("increase/storage")]
+		public async Task IncreaseStorage([FromBody] ChangeStorageBookShopRequest changeStorageRequest)
 		{
-			await using var context = _dbContextFactory.GetContext();
-			return await context.GetBooks();
+			await _bookShopService.IncreaseStorage(changeStorageRequest);
 		}
 
+		[HttpPost]
+		[Route("increase/money")]
+		public async Task IncreaseMoney([FromBody] ChangeMoneyBookShopRequest changeMoneyRequest)
+		{
+			await _bookShopService.IncreaseMoney(changeMoneyRequest);
+		}
+
+		[HttpPost]
+		[Route("decrease/storage")]
+		public async Task DecreaseStorage([FromBody] ChangeStorageBookShopRequest changeStorageRequest)
+		{
+			await _bookShopService.DecreaseStorage(changeStorageRequest);
+		}
+
+		[HttpPost]
+		[Route("decrease/money")]
+		public async Task DecreaseMoney([FromBody] ChangeMoneyBookShopRequest changeMoneyRequest)
+		{
+			await _bookShopService.DecreaseMoney(changeMoneyRequest);
+		}
 	}
 }

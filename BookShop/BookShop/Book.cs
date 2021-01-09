@@ -13,7 +13,10 @@ namespace BookShop.Core
 		public int BookInfoId { get; set; }
 		public BookInfo BookInfo { get; set; }
 
-		public List<DefectDiscount> DefectDiscounts { get; set; }
+		public virtual List<DefectDiscount> DefectDiscounts { get; set; }
+
+		public Book(){}
+
 		public Book(BookInfo bookInfo, decimal cost, DateTime arriveDate)
 		{
 			Guid = Guid.NewGuid();

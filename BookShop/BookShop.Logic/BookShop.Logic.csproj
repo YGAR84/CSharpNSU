@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BookShop.Infrastructure\BookShop.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BookShop.ContractLibrary">
+      <HintPath>..\..\BookShop.ContractLibrary\BookShop.ContractLibrary\obj\Debug\netcoreapp3.1\BookShop.ContractLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

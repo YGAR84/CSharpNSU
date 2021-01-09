@@ -14,7 +14,9 @@ namespace BookShop.Infrastructure.EntityFramework.Configurations.Discounts
 	{
 		public override void Configure(EntityTypeBuilder<GenreDiscount> builder)
 		{
-			base.Configure(builder);
+			//base.Configure(builder);
+
+			builder.HasBaseType<Discount>();
 
 			builder.HasOne(x => x.Genre)
 				.WithMany(b => b.GenreDiscounts)

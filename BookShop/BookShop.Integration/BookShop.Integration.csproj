@@ -12,7 +12,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BookShop.Logic\BookShop.Logic.csproj" />
     <ProjectReference Include="..\BookShop\BookShop.Core.csproj" />
+    <ProjectReference Include="..\BookStoreTest\BookShop.Test.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BookShop.ContractLibrary">
+      <HintPath>..\..\BookShop.ContractLibrary\BookShop.ContractLibrary\obj\Debug\netcoreapp3.1\BookShop.ContractLibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

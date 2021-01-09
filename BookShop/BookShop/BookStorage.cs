@@ -5,8 +5,8 @@ namespace BookShop.Core
 {
 	public class BookStorage
 	{
-		private Dictionary<BookInfo, List<Book>> _booksByBookInfo = new Dictionary<BookInfo, List<Book>>();
-		private Dictionary<Guid, Book> _booksByGuid = new Dictionary<Guid, Book>();
+		private readonly Dictionary<BookInfo, List<Book>> _booksByBookInfo = new Dictionary<BookInfo, List<Book>>();
+		private readonly Dictionary<Guid, Book> _booksByGuid = new Dictionary<Guid, Book>();
 
 
 		public void AddBook(Book book)

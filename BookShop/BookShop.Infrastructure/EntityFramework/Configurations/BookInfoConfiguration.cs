@@ -22,10 +22,13 @@ namespace BookShop.Infrastructure.EntityFramework.Configurations
 			builder.Property(x => x.Title).HasMaxLength(100);
 			builder.Property(x => x.Author).HasMaxLength(100);
 
-			builder.HasMany(x => x.Books)
-				.WithOne(b => b.BookInfo)
-				.HasForeignKey(b => b.BookInfoId)
-				.OnDelete(DeleteBehavior.SetNull);
+			builder.HasMany(x => x.Genres)
+				.WithMany(x => x.BookInfos);
+
+			builder.HasMany(x => x.BookDiscounts)
+				.WithOne(x => x.BookInfo)
+				.HasForeignKey(x => x.BookInfoId)
+				.OnDelete(DeleteBehavior.NoAction);
 
 		}
 	}

@@ -7,6 +7,10 @@ namespace BookShop.Core.Discounts
 		public int BookInfoId { get; set; }
 		public BookInfo BookInfo { get; set; }
 
+		public BookDiscount()
+		{
+		}
+
 		public BookDiscount(DateTime expireDate, int discountPercentage, BookInfo bookInfo) : base(expireDate,
 			discountPercentage)
 		{
