@@ -43,6 +43,7 @@ namespace BookShop.Web
 			services.AddRabbitMassTransit(Configuration);
 
 			services.AddSingleton<HttpClient>();
+			services.AddSingleton<BookRequestProducer>();
 			services.AddScoped<IBookServiceProxy, ServiceProxy>();
 			services.AddSingleton(isp => new BookShopContextDbContextFactory(Configuration.GetConnectionString("DefaultConnection")));
 			services.AddSingleton(s => 

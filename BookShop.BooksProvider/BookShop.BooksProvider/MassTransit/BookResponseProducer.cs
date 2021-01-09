@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using BookShop.BooksProvider.Contracts;
 using BookShop.BooksProvider.Extensions;
 using BookShop.ContractLibrary;
-using BookShop.Web.Contracts;
 using MassTransit;
 using Microsoft.Extensions.Configuration;
 
