@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.Core", "BookShop\BookShop.Core.csproj", "{0D00D962-AE8E-4D53-89FD-8143D7CEFE96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.Core", "BookShop.Core\BookShop.Core.csproj", "{0D00D962-AE8E-4D53-89FD-8143D7CEFE96}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.Test", "BookShop.Test\BookShop.Test.csproj", "{4D78EFB9-C4DA-4E43-97B9-2902824DF922}"
 EndProject

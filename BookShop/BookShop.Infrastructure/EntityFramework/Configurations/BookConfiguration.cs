@@ -1,5 +1,4 @@
-﻿using System.Data;
-using BookShop.Core;
+﻿using BookShop.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using JetBrains.Annotations;
