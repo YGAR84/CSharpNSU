@@ -2,6 +2,7 @@ using System;
 
 namespace BookShop.BooksProvider
 {
+	#warning ну и это ненужный код тоже
 	public class WeatherForecast
 	{
 		public DateTime Date { get; set; }

@@ -17,6 +17,7 @@ namespace BookShop.Infrastructure.EntityFramework.Configurations
 
 			builder.Property(x => x.Cost).IsRequired();
 
+			#warning честно говоря, такой вариант мне не очень нравится, но что-то через Intellisence я не нашёл, как сделать красиво :) 
 			builder.HasCheckConstraint("CK_BookShop.Book_Cost", "[Cost] > 0");
 
 			builder.Property(x => x.ArriveDate).IsRequired();

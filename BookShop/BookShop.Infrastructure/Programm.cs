@@ -4,6 +4,7 @@ using System.Text;
 
 namespace BookShop.Infrastructure
 {
+	#warning это ещё что за?))
 	public class Programm
 	{
 		public static void Main(string[] args)

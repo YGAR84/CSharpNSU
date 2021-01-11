@@ -14,6 +14,7 @@ namespace BookShop.BooksProvider.Extensions
 			services.AddMassTransit(isp =>
 				{
 					var hostConfig = configuration.GetMassTransitConfiguration();
+					#warning закоменченый код это зло, по-моему, я рассказывал почему
 					//new MassTransitConfiguration();
 					//configuration.GetSection(MassTransit).Bind(hostConfig);
 

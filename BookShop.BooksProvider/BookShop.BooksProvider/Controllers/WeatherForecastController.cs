@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace BookShop.BooksProvider.Controllers
 {
+	#warning этот контроллер не нужен в твоём проекте, это бесполезный код, а это зло
 	[ApiController]
 	[Route("[controller]")]
 	public class WeatherForecastController : ControllerBase

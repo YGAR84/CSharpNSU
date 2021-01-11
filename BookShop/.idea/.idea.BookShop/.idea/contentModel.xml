@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\a.sergeev\.nuget\packages\nunit3testadapter\3.10.0\build\netcoreapp1.0\Mono.Cecil.dll" t="Include" />
+    <e p="C:\Users\a.sergeev\.nuget\packages\nunit3testadapter\3.10.0\build\netcoreapp1.0\nunit.engine.netstandard.dll" t="Include" />
+    <e p="C:\Users\a.sergeev\.nuget\packages\nunit3testadapter\3.10.0\build\netcoreapp1.0\NUnit3.TestAdapter.dll" t="Include" />
+    <e p="C:\Users\a.sergeev\.nuget\packages\nunit3testadapter\3.10.0\build\netcoreapp1.0\NUnit3.TestAdapter.pdb" t="Include" />
+    <e p="C:\Users\a.sergeev\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\a.sergeev\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_BookShop.-1121661570.00" t="ExcludeRecursive" />
+    <e p="C:\Users\a.sergeev\AppData\Roaming\JetBrains\Rider2020.3\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\a.sergeev\AppData\Roaming\JetBrains\Rider2020.3\scratches" t="IncludeRecursive" />
+    <e p="C:\Work\CSCourse\LArtem\BookShop" t="IncludeFlat">
+      <e p="BookShop.Core" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Book.cs" t="Include" />
+        <e p="BookInfo.cs" t="Include" />
+        <e p="BookShop.Core.csproj" t="IncludeRecursive" />
+        <e p="BookShopState.cs" t="Include" />
+        <e p="BookStorage.cs" t="Include" />
+        <e p="Discounts" t="Include">
+          <e p="BookDiscount.cs" t="Include" />
+          <e p="DefectDiscount.cs" t="Include" />
+          <e p="Discount.cs" t="Include" />
+          <e p="GenreDiscount.cs" t="Include" />
+        </e>
+        <e p="Genre.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="BookShop.Core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="BookShop.Infrastructure" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BookShop.Infrastructure.csproj" t="IncludeRecursive" />
+        <e p="EntityFramework" t="Include">
+          <e p="BookShopContext.cs" t="Include" />
+          <e p="BookShopContextContextDesignTimeFactory.cs" t="Include" />
+          <e p="BookShopContextDbContextFactory.cs" t="Include" />
+          <e p="Configurations" t="Include">
+            <e p="BookConfiguration.cs" t="Include" />
+            <e p="BookInfoConfiguration.cs" t="Include" />
+            <e p="BookShopStateConfiguration.cs" t="Include" />
+            <e p="Discounts" t="Include">
+              <e p="BookDiscountConfiguration.cs" t="Include" />
+              <e p="DefectDiscountConfiguration.cs" t="Include" />
+              <e p="DiscountConfiguration.cs" t="Include" />
+              <e p="GenreDiscountConfiguration.cs" t="Include" />
+            </e>
+            <e p="GenreConfiguration.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Migrations" t="Include">
+          <e p="20201229175639_initial.cs" t="Include" />
+          <e p="20201229175639_initial.Designer.cs" t="Include" />
+          <e p="20201229183753_UpdateRelations.cs" t="Include" />
+          <e p="20201229183753_UpdateRelations.Designer.cs" t="Include" />
+          <e p="20210102151013_AddBookShop.cs" t="Include" />
+          <e p="20210102151013_AddBookShop.Designer.cs" t="Include" />
+          <e p="20210104173744_AddUniqueGenreName.cs" t="Include" />
+          <e p="20210104173744_AddUniqueGenreName.Designer.cs" t="Include" />
+          <e p="20210104183335_AddRequiredGenreName.cs" t="Include" />
+          <e p="20210104183335_AddRequiredGenreName.Designer.cs" t="Include" />
+          <e p="BookShopContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="BookShop.Infrastructure.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Programm.cs" t="Include" />
+      </e>
+      <e p="BookShop.Integration" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BookShop.Integration.csproj" t="IncludeRecursive" />
+        <e p="ExternalServices" t="Include">
+          <e p="ServiceProxy.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="BookShop.Integration.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="BookShop.Logic" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BookShop.Logic.csproj" t="IncludeRecursive" />
+        <e p="BookShopService.cs" t="Include" />
+        <e p="extensions" t="Include">
+          <e p="BookExtension.cs" t="Include" />
+        </e>
+        <e p="IBookServiceProxy.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="BookShop.Logic.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Requests" t="Include">
+          <e p="BookRequests" t="Include">
+            <e p="AddBookRequest.cs" t="Include" />
+            <e p="UpdateBookRequest.cs" t="Include" />
+          </e>
+          <e p="BookShopRequest" t="Include">
+            <e p="ChangeMoneyBookShopRequest.cs" t="Include" />
+            <e p="ChangeStorageBookShopRequest.cs" t="Include" />
+          </e>
+          <e p="DiscountsRequests" t="Include">
+            <e p="AddBookDiscountRequest.cs" t="Include" />
+            <e p="AddDefectDiscountRequest.cs" t="Include" />
+            <e p="AddDiscountRequest.cs" t="Include" />
+            <e p="AddGenreDiscountRequest.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Responses" t="Include">
+          <e p="BookResponses" t="Include">
+            <e p="GetBookResponse.cs" t="Include" />
+            <e p="GetBooksResponse.cs" t="Include" />
+            <e p="InnerBook.cs" t="Include" />
+          </e>
+          <e p="BookShopResponses" t="Include">
+            <e p="GetBookShopResponse.cs" t="Include" />
+          </e>
+          <e p="DiscountsResponses" t="Include">
+            <e p="GetBookDiscountResponse.cs" t="Include" />
+            <e p="GetDefectDiscountResponse.cs" t="Include" />
+            <e p="GetDiscountResponse.cs" t="Include" />
+            <e p="GetGenreDiscountResponse.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Utils" t="Include">
+          <e p="GetDiscountResponseBuilder" t="Include">
+            <e p="GetBookDiscountResponseBuilder.cs" t="Include" />
+            <e p="GetDefectDiscountResponseBuilder.cs" t="Include" />
+            <e p="GetDiscountResponseBuilder.cs" t="Include" />
+            <e p="GetGenreDiscountResponseBuilder.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="BookShop.sln" t="IncludeFlat" />
+      <e p="BookShop.Test" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BookInfoTest.cs" t="Include" />
+        <e p="BookShop.Test.csproj" t="IncludeRecursive" />
+        <e p="BookStorageTest.cs" t="Include" />
+        <e p="BookTest.cs" t="Include" />
+        <e p="DiscountsTest" t="Include">
+          <e p="BookDiscountTest.cs" t="Include" />
+          <e p="DefectDiscountTest.cs" t="Include" />
+          <e p="DiscountTest.cs" t="Include" />
+          <e p="GenreDiscountTest.cs" t="Include" />
+        </e>
+        <e p="GenreTest.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="BookShop.Test.AssemblyInfo.cs" t="Include" />
+              <e p="BookShop.Test.Program.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="BookShop.Web" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BookShop.Web.csproj" t="IncludeRecursive" />
+        <e p="Contracts" t="Include">
+          <e p="BookRequestContract.cs" t="Include" />
+          <e p="BookResponseContract.cs" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="BooksController.cs" t="Include" />
+          <e p="BookShopController.cs" t="Include" />
+          <e p="DiscountsController.cs" t="Include" />
+        </e>
+        <e p="extensions" t="Include">
+          <e p="ConfigurationGetMasTransitExtension.cs" t="Include" />
+          <e p="RabbitMQServiceCollectionExtension.cs" t="Include" />
+          <e p="ServiceCollectionExtensions.cs" t="Include" />
+        </e>
+        <e p="Jobs" t="Include">
+          <e p="BooksCountCheckJob.cs" t="Include" />
+          <e p="InjectableJobFactory.cs" t="Include" />
+          <e p="QuartzHostedService.cs" t="Include" />
+        </e>
+        <e p="MassTransit" t="Include">
+          <e p="BookRequestProducer.cs" t="Include" />
+          <e p="BooksReceivedConsumer.cs" t="Include" />
+          <e p="MassTransitConfiguration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="BookShop.Web.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="wwwroot" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

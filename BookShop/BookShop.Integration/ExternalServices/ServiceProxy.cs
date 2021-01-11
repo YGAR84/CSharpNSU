@@ -17,6 +17,7 @@ namespace BookShop.Integration.ExternalServices
 		private readonly HttpClient _httpClient;
 		private const string Endpoint = "https://getbooksrestapi.azurewebsites.net/api/books/";
 
+		#warning приватный класс лучше всё-таки размещать в конце, после всех паблик членов
 		private class AzureBook : IBook
 		{
 			public string Title { get; set; }

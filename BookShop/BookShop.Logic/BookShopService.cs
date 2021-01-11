@@ -84,6 +84,7 @@ namespace BookShop.Logic
 
 		public async Task DeleteBook(Guid bookGuid)
 		{
+			#warning зачем первая строчка?
 			var book = await _dbContextFactory.GetContext().GetBook(bookGuid);
 			await _dbContextFactory.GetContext().DeleteBook(bookGuid);
 		}
@@ -96,6 +97,11 @@ namespace BookShop.Logic
 			bookShopState.Balance += book.Cost;
 
 			await _dbContextFactory.GetContext().UpdateBookShopState(bookShopState);
+			#warning смотри, тут таится подводный камень. у тебя может отработать UpdateBookShopState, а на DeleteBook может свалиться
+			#warning транзакция к базе, тогда у тебя данные получатся неконсистентные. 
+			#warning выход из этого есть - выполнять обе операции в одной транзакции. 
+			#warning я про это не рассказывал, т.ч. требовать не буду, но если тебе совсем скучно, нечем заняться, а всё вот это очень понравилось, 
+			#warning то можешь попробовать сделать :) 
 			await _dbContextFactory.GetContext().DeleteBook(bookGuid);
 		}
 
@@ -133,6 +139,7 @@ namespace BookShop.Logic
 
 		private async Task<Book> MapUpdateBookRequestToBook(Guid bookGuid, UpdateBookRequest updateBookRequest)
 		{
+			#warning неиспользуемая переменная - это мусор в коде!
 			var bookShopState = await GetBookShopState();
 
 			var book = await _dbContextFactory.GetContext().GetBook(bookGuid);
