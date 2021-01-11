@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.Core", "BookShop\BookShop.Core.csproj", "{0D00D962-AE8E-4D53-89FD-8143D7CEFE96}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.Test", "BookStoreTest\BookShop.Test.csproj", "{4D78EFB9-C4DA-4E43-97B9-2902824DF922}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.Test", "BookShop.Test\BookShop.Test.csproj", "{4D78EFB9-C4DA-4E43-97B9-2902824DF922}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.Web", "BookShopWeb\BookShop.Web.csproj", "{AB1C8A97-F6BB-44BF-B39F-7A78AEBA39C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.Web", "BookShop.Web\BookShop.Web.csproj", "{AB1C8A97-F6BB-44BF-B39F-7A78AEBA39C1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.Integration", "BookShop.Integration\BookShop.Integration.csproj", "{36DA9C50-ED73-46A3-9E04-289BF1FD46D6}"
 EndProject

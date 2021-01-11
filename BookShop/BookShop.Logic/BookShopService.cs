@@ -7,11 +7,9 @@ using BookShop.Core;
 using BookShop.Core.Discounts;
 using BookShop.Infrastructure.EntityFramework;
 using BookShop.Logic.Extensions;
-using BookShop.Logic.Requests;
 using BookShop.Logic.Requests.BookRequests;
 using BookShop.Logic.Requests.BookShopRequest;
 using BookShop.Logic.Requests.DiscountsRequests;
-using BookShop.Logic.Responses;
 using BookShop.Logic.Responses.BookResponses;
 using BookShop.Logic.Responses.BookShopResponses;
 using BookShop.Logic.Responses.DiscountsResponses;
@@ -37,7 +35,7 @@ namespace BookShop.Logic
 			var bookShopState = await GetBookShopState();
 			if (bookShopState.StorageSize <= await _dbContextFactory.GetContext().GetBooksCount()) return;
 
-			var bookCost = _getBookAcceptanceCost(addBookRequest.Cost);
+			var bookCost = GetBookAcceptanceCost(addBookRequest.Cost);
 			if (bookCost > bookShopState.Balance) return;
 
 			bookShopState.Balance -= bookCost;
@@ -62,7 +60,7 @@ namespace BookShop.Logic
 			await AddBooks(addBookRequests);
 		}
 
-		private decimal _getBookAcceptanceCost(decimal bookCost)
+		private static decimal GetBookAcceptanceCost(decimal bookCost)
 		{
 			return bookCost * AcceptanceBookPercent;
 		}
@@ -498,7 +496,7 @@ namespace BookShop.Logic
 			       || (getOldBooksCount >= bookShopState.StorageSize * 0.75M); // Old books more than 75% of storage
 		}
 
-		public async Task<int> GetBooksGetCount()
+		public async Task<int> GetBooksOrderCount()
 		{
 			var bookShopState = await GetBookShopState();
 

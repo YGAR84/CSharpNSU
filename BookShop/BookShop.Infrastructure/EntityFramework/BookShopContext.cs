@@ -14,8 +14,6 @@ namespace BookShop.Infrastructure.EntityFramework
 
 		public BookShopContext(DbContextOptions options) : base(options)
 		{
-			//Database.EnsureCreated();
-			//Database.Migrate();
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -39,7 +37,8 @@ namespace BookShop.Infrastructure.EntityFramework
 
 		public async Task<int> GetBooksCount(DateTime arriveDate)
 		{
-			return await Set<Book>().CountAsync(b => b.ArriveDate < arriveDate);
+			return await Set<Book>()
+				.CountAsync(b => b.ArriveDate < arriveDate);
 		}
 
 		public async Task<Book> GetBook(Guid bookGuid)
@@ -153,30 +152,18 @@ namespace BookShop.Infrastructure.EntityFramework
 		public async Task<List<BookDiscount>> GetBookDiscounts(int bookInfoId)
 		{
 			return await Set<BookDiscount>()
-				.Where(bd => bd.BookInfoId ==bookInfoId)
+				.Where(bd => bd.BookInfoId == bookInfoId)
 				.ToListAsync();
 		}
 
 		public async Task<List<GenreDiscount>> GetGenreDiscounts(List<Genre> genres)
 		{
-			var genreDiscounts = new List<GenreDiscount>();
-			foreach (var genre in genres)
-			{
-				var currentDiscounts = await Set<GenreDiscount>()
-					.Where(gd => gd.GenreId == genre.Id)
-					.ToListAsync();
-
-				genreDiscounts.AddRange(currentDiscounts);
-			}
-
-			var a = await Set<GenreDiscount>()
+			var genreDiscounts = await Set<GenreDiscount>()
 				.Where(gd => genres
 					.Select(g => g.Id)
-					.Contains(gd.Id))
+					.Contains(gd.GenreId))
 				.ToListAsync();
 
-			Console.WriteLine(string.Join("," , a.Select(g => g.Id).ToArray()));
-			Console.WriteLine(string.Join(",", genreDiscounts.Select(g => g.Id).ToArray()));
 			return genreDiscounts;
 		}
 

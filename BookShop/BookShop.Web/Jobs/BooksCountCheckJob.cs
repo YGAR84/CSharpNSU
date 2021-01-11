@@ -28,7 +28,7 @@ namespace BookShop.Web.Jobs
 		    var needBooks = await _bookShopService.NeedMoreBooks();
 		    if (needBooks)
             {
-	            var count = await _bookShopService.GetBooksGetCount();
+	            var count = await _bookShopService.GetBooksOrderCount();
 	            if (count <= 0)
 	            {
 		            return;
