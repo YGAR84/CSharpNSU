@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookShop.Core;
-using BookShop.Logic.Requests;
 using BookShop.Logic.Requests.BookRequests;
 
 namespace BookShop.Logic

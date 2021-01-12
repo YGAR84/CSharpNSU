@@ -44,15 +44,5 @@ namespace BookShop.Web.Jobs
             var job = JobBuilder.Create<BooksCountCheckJob>().WithIdentity(nameof(BooksCountCheckJob)).Build();
             await Scheduler.ScheduleJob(job, trigger);
         }
-
-        //private async Task ConfigureBooksReceiveJob()
-        //{
-	       // var trigger = TriggerBuilder.Create()
-		      //  .WithIdentity(nameof(BooksReceiveJob))
-		      //  .WithSimpleSchedule(x => x.WithIntervalInMinutes(1).RepeatForever())
-		      //  .Build();
-	       // var job = JobBuilder.Create<BooksReceiveJob>().WithIdentity(nameof(BooksReceiveJob)).Build();
-	       // await Scheduler.ScheduleJob(job, trigger);
-        //}
     }
 }

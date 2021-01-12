@@ -12,9 +12,7 @@ namespace BookShop.Infrastructure.EntityFramework
 	{
 		public const string DefaultSchemaName = "BookShop";
 
-		public BookShopContext(DbContextOptions options) : base(options)
-		{
-		}
+		public BookShopContext(DbContextOptions options) : base(options) {}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
@@ -78,10 +76,11 @@ namespace BookShop.Infrastructure.EntityFramework
 			{
 				bookInfo = new BookInfo(title, author, null);
 				await Set<BookInfo>().AddAsync(bookInfo);
-
 				await SaveChangesAsync();
 
-				bookInfo = await Set<BookInfo>().FirstAsync(bi => bi.Id == bookInfo.Id);
+				bookInfo = await Set<BookInfo>()
+					.FirstAsync(bi => bi.Id == bookInfo.Id);
+
 				bookInfo.Genres = genres;
 				Set<BookInfo>().Update(bookInfo);
 				await SaveChangesAsync();
@@ -230,7 +229,6 @@ namespace BookShop.Infrastructure.EntityFramework
 		{
 			var discount = await Set<Discount>()
 				.FirstOrDefaultAsync(d => d.Id == discountId);
-
 			if (discount != null)
 			{
 				await DeleteDiscount(discount);
@@ -240,7 +238,6 @@ namespace BookShop.Infrastructure.EntityFramework
 		public async Task DeleteDiscount(Discount discount)
 		{
 			Set<Discount>().Remove(discount);
-
 			await SaveChangesAsync();
 		}
 

@@ -32,8 +32,7 @@ namespace BookShop.BooksProvider.ExternalServices
 			var httpRequest = new HttpRequestMessage
 			{
 				Method = HttpMethod.Get,
-				RequestUri = new Uri($"{Endpoint}/{count}"),
-
+				RequestUri = new Uri($"{Endpoint}/{count}")
 			};
 
 			var response = await _httpClient.SendAsync(httpRequest);

@@ -5,8 +5,6 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BookShop.Infrastructure.EntityFramework.Configurations.Discounts
 {
-
-
 	[UsedImplicitly]
 	public class DefectDiscountConfiguration : DiscountConfiguration<DefectDiscount>
 	{

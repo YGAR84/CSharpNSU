@@ -20,8 +20,6 @@ namespace BookShop.Infrastructure.EntityFramework.Configurations
 			builder.Property(x => x.Balance).IsRequired().HasDefaultValue(DefaultBalance);
 
 			builder.Property(x => x.StorageSize).IsRequired().HasDefaultValue(DefaultStorageSize);
-
-	
 		}
 	}
 }

@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using JetBrains.Annotations;
 
-
 namespace BookShop.Infrastructure.EntityFramework.Configurations
 {
 	[UsedImplicitly]

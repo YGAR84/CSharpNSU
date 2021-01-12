@@ -14,8 +14,6 @@ namespace BookShop.BooksProvider.Extensions
 			services.AddMassTransit(isp =>
 				{
 					var hostConfig = configuration.GetMassTransitConfiguration();
-					//new MassTransitConfiguration();
-					//configuration.GetSection(MassTransit).Bind(hostConfig);
 
 					return Bus.Factory.CreateUsingRabbitMq(cfg =>
 					{

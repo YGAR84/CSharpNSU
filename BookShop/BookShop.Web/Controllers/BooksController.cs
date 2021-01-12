@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookShop.Logic;
-using BookShop.Logic.Requests;
 using BookShop.Logic.Requests.BookRequests;
 using BookShop.Logic.Responses.BookResponses;
 using Microsoft.AspNetCore.Mvc;

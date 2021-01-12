@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BookShop.Web.MassTransit;
+﻿using BookShop.Web.MassTransit;
 using Microsoft.Extensions.Configuration;
 
 namespace BookShop.Web.Extensions

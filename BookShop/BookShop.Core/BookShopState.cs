@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using BookShop.Core.Discounts;
-
-namespace BookShop.Core
+﻿namespace BookShop.Core
 {
 	public class BookShopState
 	{

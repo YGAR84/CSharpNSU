@@ -1,13 +1,9 @@
-﻿using System;
-using System.Net.Http;
-using BookShop.Core;
+﻿using System.Net.Http;
 using BookShop.Infrastructure.EntityFramework;
 using BookShop.Integration.ExternalServices;
 using BookShop.Logic;
 using BookShop.Web.Extensions;
 using BookShop.Web.MassTransit;
-using MassTransit;
-using MassTransit.AspNetCoreIntegration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

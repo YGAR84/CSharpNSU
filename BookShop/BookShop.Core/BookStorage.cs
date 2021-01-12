@@ -8,7 +8,6 @@ namespace BookShop.Core
 		private readonly Dictionary<BookInfo, List<Book>> _booksByBookInfo = new Dictionary<BookInfo, List<Book>>();
 		private readonly Dictionary<Guid, Book> _booksByGuid = new Dictionary<Guid, Book>();
 
-
 		public void AddBook(Book book)
 		{
 			if (!_booksByBookInfo.ContainsKey(book.BookInfo))

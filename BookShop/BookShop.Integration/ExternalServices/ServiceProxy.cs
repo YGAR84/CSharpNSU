@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using BookShop.ContractLibrary;
 using BookShop.Core;
 using BookShop.Logic;
-using BookShop.Logic.Requests;
 using BookShop.Logic.Requests.BookRequests;
 using Newtonsoft.Json;
 
@@ -56,7 +55,6 @@ namespace BookShop.Integration.ExternalServices
 			{
 				Method = HttpMethod.Get,
 				RequestUri = new Uri($"{Endpoint}/{count}"),
-
 			};
 
 			var response = await _httpClient.SendAsync(httpRequest);

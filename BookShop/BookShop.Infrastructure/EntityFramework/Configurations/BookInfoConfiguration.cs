@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using BookShop.Core;
+﻿using BookShop.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using JetBrains.Annotations;
 
-
 namespace BookShop.Infrastructure.EntityFramework.Configurations
 {
-
 	[UsedImplicitly]
 	public class BookInfoConfiguration : IEntityTypeConfiguration<BookInfo>
 	{

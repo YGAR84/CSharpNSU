@@ -14,8 +14,7 @@ namespace BookShop.Web.Extensions
             services.AddSingleton<IJobFactory, InjectableJobFactory>();
             services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>(isp =>
             {
-
-                var properties = new NameValueCollection
+	            var properties = new NameValueCollection
                 {
                     ["quartz.scheduler.interruptJobsOnShutdownWithWait"] = "true",
                     ["quartz.scheduler.interruptJobsOnShutdown"] = "true"

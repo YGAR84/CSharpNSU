@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BookShop.Infrastructure.EntityFramework.Configurations.Discounts
 {
-
 	[UsedImplicitly]
 	public abstract class DiscountConfiguration<TBase> : IEntityTypeConfiguration<TBase>
 		where TBase : Discount

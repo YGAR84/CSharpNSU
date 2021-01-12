@@ -1,12 +1,7 @@
-using System;
 using System.Threading.Tasks;
 using BookShop.Logic;
-using BookShop.Web.Contracts;
-using BookShop.Web.Extensions;
 using BookShop.Web.MassTransit;
 using JetBrains.Annotations;
-using MassTransit;
-using Microsoft.Extensions.Configuration;
 using Quartz;
 
 namespace BookShop.Web.Jobs

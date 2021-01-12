@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BookShop.Core.Discounts
 {
@@ -10,9 +8,7 @@ namespace BookShop.Core.Discounts
 		public DateTime ExpireDate { get; set; }
 		public decimal DiscountPercentage { get; set; }
 
-		protected Discount()
-		{
-		}
+		protected Discount() {}
 
 		protected Discount(DateTime expireDate, int discountPercentage)
 		{
