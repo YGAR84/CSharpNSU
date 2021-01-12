@@ -17,6 +17,7 @@ namespace BookShop.Infrastructure.EntityFramework.Configurations
 			builder.Property(x => x.Cost).IsRequired();
 
 #warning честно говоря, такой вариант мне не очень нравится, но что-то через Intellisence я не нашёл, как сделать красиво :) 
+
 #warning мне тоже, но эти конфигураторы так не умеют, в отличии от аннотаций, в которые можно прописывать чеки по типа [Range(0, INT_MAX)] около пропса
 			builder.HasCheckConstraint("CK_BookShop.Book_Cost", "[Cost] > 0");
 

@@ -21,7 +21,11 @@ namespace BookShop.Infrastructure.EntityFramework.Configurations
 
 			builder.Property(x => x.StorageSize).IsRequired().HasDefaultValue(DefaultStorageSize);
 
-			#warning разве не должно быть связи со всеми книгами, которые есть в магазине?
+#warning разве не должно быть связи со всеми книгами, которые есть в магазине?
+
+#warning ну я не хотел этого, потому что кингу жёстко не связывал с букшопом, где она хранится, а доступ к книгам я и так получаю
+#warning мб и стоило бы, если бы я зашёл ещё дальше)
+
 		}
 	}
 }
