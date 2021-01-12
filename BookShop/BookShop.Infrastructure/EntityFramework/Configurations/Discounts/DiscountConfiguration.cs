@@ -5,6 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BookShop.Infrastructure.EntityFramework.Configurations.Discounts
 {
+#warning Основная идея - сделать TPH для скидочек
+#warning Нашёл в инете как это делают руками, потому что до этого Fluent юзал
+#warning Когда делаю TPH, то могу применять скидки к книге независимо от типа скидки, что в принципе удобно
+#warning не знаю, как такое в нормальных проектах делают)
+
 	[UsedImplicitly]
 	public abstract class DiscountConfiguration<TBase> : IEntityTypeConfiguration<TBase>
 		where TBase : Discount

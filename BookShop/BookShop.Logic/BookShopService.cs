@@ -17,6 +17,7 @@ using BookShop.Logic.Utils.GetDiscountResponseBuilder;
 
 namespace BookShop.Logic
 {
+#warning Не нравится, что класс так разросся, но не знаю, как красиво раскидать)
 	public class BookShopService
 	{
 		private readonly BookShopContextDbContextFactory _dbContextFactory;
