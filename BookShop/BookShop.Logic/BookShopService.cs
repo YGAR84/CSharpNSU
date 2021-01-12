@@ -39,9 +39,17 @@ namespace BookShop.Logic
 			if (bookCost > bookShopState.Balance) return;
 
 			bookShopState.Balance -= bookCost;
-			await _dbContextFactory.GetContext().UpdateBookShopState(bookShopState);
 
-			await MapAddBookRequestToBook(addBookRequest);
+			var transaction = await _dbContextFactory.GetContext().Database.BeginTransactionAsync();
+			try
+			{
+				await _dbContextFactory.GetContext().UpdateBookShopState(bookShopState);
+				await MapAddBookRequestToBook(addBookRequest);
+			}
+			catch (Exception)
+			{
+				// ignored
+			}
 		}
 
 		public async Task AddBooks(List<AddBookRequest> addBookRequests)
@@ -84,7 +92,6 @@ namespace BookShop.Logic
 
 		public async Task DeleteBook(Guid bookGuid)
 		{
-			var book = await _dbContextFactory.GetContext().GetBook(bookGuid);
 			await _dbContextFactory.GetContext().DeleteBook(bookGuid);
 		}
 
@@ -95,8 +102,18 @@ namespace BookShop.Logic
 			var book = await GetBookWithDiscount(bookGuid);
 			bookShopState.Balance += book.Cost;
 
-			await _dbContextFactory.GetContext().UpdateBookShopState(bookShopState);
-			await _dbContextFactory.GetContext().DeleteBook(bookGuid);
+			var transaction = await _dbContextFactory.GetContext().Database.BeginTransactionAsync();
+			try
+			{
+				await _dbContextFactory.GetContext().UpdateBookShopState(bookShopState);
+				await _dbContextFactory.GetContext().DeleteBook(bookGuid);
+
+				await transaction.CommitAsync();
+			}
+			catch (Exception)
+			{
+				// ignored
+			}
 		}
 
 		public async Task UpdateBook(Guid bookGuid, UpdateBookRequest updateBookRequest)

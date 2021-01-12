@@ -28,7 +28,7 @@ namespace BookShop.BooksProvider.MassTransit
 
 			var hostConfig = _configuration.GetMassTransitConfiguration();
 			var endpoint = await _sendEndpointProvider
-				.GetSendEndpoint(hostConfig.GetQueueAddress(hostConfig.RequestQueue));
+				.GetSendEndpoint(hostConfig.GetQueueAddress(RequestQueue));
 
 			await endpoint.Send(message);
 		}

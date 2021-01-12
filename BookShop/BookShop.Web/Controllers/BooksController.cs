@@ -26,7 +26,7 @@ namespace BookShop.Web.Controllers
 		{
 			return await _bookShopService.GetBooksResponse();
 		}
-
+		
 		[HttpGet( "{bookGuid}")]
 		public async Task<GetBookResponse> GetBook(Guid bookGuid)
 		{

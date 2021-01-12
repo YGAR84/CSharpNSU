@@ -9,8 +9,6 @@ namespace BookShop.BooksProvider.MassTransit
         public string Password { get; set; }
         public bool Durable { get; set; }
         public bool PurgeOnStartup { get; set; }
-        public string ResponseQueue { get; set; }
-        public string RequestQueue { get; set; }
 
         public Uri GetQueueAddress(string queueName)
         {

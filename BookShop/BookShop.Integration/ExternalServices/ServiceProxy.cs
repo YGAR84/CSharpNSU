@@ -15,35 +15,7 @@ namespace BookShop.Integration.ExternalServices
 	{
 		private readonly HttpClient _httpClient;
 		private const string Endpoint = "https://getbooksrestapi.azurewebsites.net/api/books/";
-
-		private class AzureBook : IBook
-		{
-			public string Title { get; set; }
-			public string Genre { get; set; }
-			public int Price { get; set; }
-			public bool IsNew { get; set; }
-			public DateTime DateOfDelivery { get; set; }
-
-			public Book ToBook()
-			{
-				var bookInfo = new BookInfo(Title, "no author", new List<Genre>{ new Genre(Genre)});
-				var book = new Book(bookInfo, Price, DateOfDelivery);
-				return book;
-			}
-
-			public AddBookRequest ToAddBookRequest()
-			{
-				return new AddBookRequest()
-				{
-					ArriveDate = DateOfDelivery,
-					Author = "no author",
-					Cost = Price,
-					Genres = new List<string> {Genre},
-					Title = Title
-				};
-			}
-		}
-
+		
 		public ServiceProxy(HttpClient httpClient)
 		{
 			_httpClient = httpClient;
@@ -75,6 +47,34 @@ namespace BookShop.Integration.ExternalServices
 			var booksString = await response.Content.ReadAsStringAsync();
 			var books = JsonConvert.DeserializeObject<List<AzureBook>>(booksString);
 			return books.Select(sb => sb.ToAddBookRequest()).ToList();
+		}
+
+		private class AzureBook : IBook
+		{
+			public string Title { get; set; }
+			public string Genre { get; set; }
+			public int Price { get; set; }
+			public bool IsNew { get; set; }
+			public DateTime DateOfDelivery { get; set; }
+
+			public Book ToBook()
+			{
+				var bookInfo = new BookInfo(Title, "no author", new List<Genre> { new Genre(Genre) });
+				var book = new Book(bookInfo, Price, DateOfDelivery);
+				return book;
+			}
+
+			public AddBookRequest ToAddBookRequest()
+			{
+				return new AddBookRequest()
+				{
+					ArriveDate = DateOfDelivery,
+					Author = "no author",
+					Cost = Price,
+					Genres = new List<string> { Genre },
+					Title = Title
+				};
+			}
 		}
 	}
 }

@@ -29,7 +29,7 @@ namespace BookShop.BooksProvider.Extensions
 						cfg.PurgeOnStartup = hostConfig.PurgeOnStartup;
 
 						cfg.ReceiveEndpoint(host,
-							hostConfig.ResponseQueue, ep =>
+							Constants.ResponseQueue, ep =>
 							{
 								ep.PrefetchCount = 1;
 								ep.ConfigureConsumer<BooksReceivedRequestConsumer>(isp);
