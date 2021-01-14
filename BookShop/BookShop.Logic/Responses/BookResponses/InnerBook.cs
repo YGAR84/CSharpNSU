@@ -6,6 +6,7 @@ namespace BookShop.Logic.Responses.BookResponses
 	{
 		public Guid Guid { get; set; }
 		public decimal Cost { get; set; }
+		public decimal CostWithDiscount { get; set; }
 		public DateTime ArriveDate { get; set; }
 	}
 }

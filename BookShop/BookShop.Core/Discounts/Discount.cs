@@ -13,12 +13,19 @@ namespace BookShop.Core.Discounts
 		protected Discount(DateTime expireDate, int discountPercentage)
 		{
 			ExpireDate = expireDate;
-			DiscountPercentage = (discountPercentage % 101) / 100m;
+			DiscountPercentage = (discountPercentage % 101);
 		}
 
 		protected Book BookFromBookAndCost(Book book, decimal newCost)
 		{
-			return new Book(book.BookInfo, newCost, book.ArriveDate);
+			return new Book
+			{
+				Guid = book.Guid,
+				BookInfoId = book.BookInfoId,
+				BookInfo = book.BookInfo,
+				Cost = newCost,
+				ArriveDate = book.ArriveDate,
+			};
 		}
 
 		public bool IsExpired(DateTime currentDate)
@@ -33,7 +40,7 @@ namespace BookShop.Core.Discounts
 			if (IsExpired(currentDate) || !HasDiscount(book)) return book;
 
 			decimal bookCost = book.Cost;
-			decimal newBookCost = Math.Round(bookCost * (1 - DiscountPercentage), 2);
+			decimal newBookCost = Math.Round(bookCost * (100 - DiscountPercentage)/100, 2);
 
 			return BookFromBookAndCost(book, newBookCost);
 		}

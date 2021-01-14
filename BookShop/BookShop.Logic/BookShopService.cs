@@ -88,7 +88,14 @@ namespace BookShop.Logic
 		public async Task<List<GetBooksResponse>> GetBooksResponse()
 		{
 			var bookInfos = await _dbContextFactory.GetContext().GetBookInfos();
-			return bookInfos.Select(MapBookInfoToGetBooksResponse).ToList();
+			var getBooksResponses = new List<GetBooksResponse>();
+			foreach (var bookInfo in bookInfos)
+			{
+				var getBookResponse = await MapBookInfoToGetBooksResponse(bookInfo);
+				getBooksResponses.Add(getBookResponse);
+			}
+
+			return getBooksResponses;
 		}
 
 		public async Task DeleteBook(Guid bookGuid)
@@ -111,9 +118,10 @@ namespace BookShop.Logic
 
 				await transaction.CommitAsync();
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
-				// ignored
+				//ignored
+				Console.WriteLine(e);
 			}
 		}
 
@@ -205,22 +213,32 @@ namespace BookShop.Logic
 			};
 		}
 
-		private GetBooksResponse MapBookInfoToGetBooksResponse(BookInfo bookInfo)
+		private async Task<GetBooksResponse> MapBookInfoToGetBooksResponse(BookInfo bookInfo)
 		{
-			return new GetBooksResponse()
+			var getBooksResponse = new GetBooksResponse
 			{
-
 				BookInfoId = bookInfo.Id,
 				Author = bookInfo.Author,
 				Title = bookInfo.Title,
 				Genres = bookInfo.Genres.Select(g => g.Name).ToList(),
-				Books = bookInfo.Books.Select(book => new InnerBook()
+				Books = new List<InnerBook>()
+			};
+
+			foreach (var book in bookInfo.Books)
+			{
+				var innerBook = new InnerBook()
 				{
 					Guid = book.Guid,
 					ArriveDate = book.ArriveDate,
 					Cost = book.Cost
-				}).ToList()
-			};
+				};
+
+				var costWithDiscounts = (await GetBookWithDiscount(book)).Cost;
+				innerBook.CostWithDiscount = costWithDiscounts;
+				getBooksResponse.Books.Add(innerBook);
+			}
+
+			return getBooksResponse;
 		}
 
 		private async Task<Book> ApplyDiscounts(Book book)

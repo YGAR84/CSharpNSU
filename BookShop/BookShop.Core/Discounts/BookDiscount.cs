@@ -17,7 +17,7 @@ namespace BookShop.Core.Discounts
 
 		protected override bool HasDiscount(Book book)
 		{
-			return book.BookInfo == BookInfo;
+			return book.BookInfoId == BookInfoId;
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace BookShop.Core.Discounts
 {
@@ -15,7 +16,9 @@ namespace BookShop.Core.Discounts
 
 		protected override bool HasDiscount(Book book)
 		{
-			return book.BookInfo.Genres.Contains(Genre);
+			return book.BookInfo.Genres
+				.Select(g => g.Id)
+				.Contains(GenreId);
 		}
 	}
 }

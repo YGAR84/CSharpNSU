@@ -12,20 +12,15 @@ namespace BookShop.Infrastructure.EntityFramework
 	{
 		public const string DefaultSchemaName = "BookShop";
 
-		public BookShopContext(DbContextOptions options) : base(options) {}
+		public BookShopContext(DbContextOptions options) : base(options)
+		{
+			Database.EnsureCreated();
+		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
 			modelBuilder.HasDefaultSchema(DefaultSchemaName);
-		}
-
-		public async Task<List<Book>> GetBooks()
-		{
-			return await Set<Book>()
-				.Include(b => b.BookInfo)
-				.ThenInclude(b => b.Genres)
-				.ToListAsync();
 		}
 
 		public async Task<int> GetBooksCount()
